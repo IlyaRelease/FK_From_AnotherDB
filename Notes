@@ -1,0 +1,4 @@
+add-migration initial-create-scada -context ScadaDbContext;
+add-migration initial-create-conf -context ConfDbContext;
+update-database -context ScadaDbContext;
+update-database -context ConfDbContext;
