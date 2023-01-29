@@ -24,19 +24,15 @@ namespace WebApplication1FKFromAnotherDB.Migrations
 
             modelBuilder.Entity("WebApplication1_FK_From_AnotherDB.EFCore.SCADA.Models.BondSignalToTagEntity", b =>
                 {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
+                    b.Property<Guid>("TagId")
                         .HasColumnType("uuid");
 
                     b.Property<Guid>("SignalId")
                         .HasColumnType("uuid");
 
-                    b.Property<Guid>("TagId")
-                        .HasColumnType("uuid");
+                    b.HasKey("TagId");
 
-                    b.HasKey("Id");
-
-                    b.ToTable("BountSignalToTag");
+                    b.ToTable("BondSignalToTag");
                 });
 
             modelBuilder.Entity("WebApplication1_FK_From_AnotherDB.EFCore.SCADA.Models.TagEntity", b =>
@@ -52,6 +48,22 @@ namespace WebApplication1FKFromAnotherDB.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Tags");
+                });
+
+            modelBuilder.Entity("WebApplication1_FK_From_AnotherDB.EFCore.SCADA.Models.BondSignalToTagEntity", b =>
+                {
+                    b.HasOne("WebApplication1_FK_From_AnotherDB.EFCore.SCADA.Models.TagEntity", "TagEntity")
+                        .WithOne("BondSignalToTagEntity")
+                        .HasForeignKey("WebApplication1_FK_From_AnotherDB.EFCore.SCADA.Models.BondSignalToTagEntity", "TagId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("TagEntity");
+                });
+
+            modelBuilder.Entity("WebApplication1_FK_From_AnotherDB.EFCore.SCADA.Models.TagEntity", b =>
+                {
+                    b.Navigation("BondSignalToTagEntity");
                 });
 #pragma warning restore 612, 618
         }

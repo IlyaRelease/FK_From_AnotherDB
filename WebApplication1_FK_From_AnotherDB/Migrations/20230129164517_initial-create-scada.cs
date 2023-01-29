@@ -6,24 +6,11 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace WebApplication1FKFromAnotherDB.Migrations
 {
     /// <inheritdoc />
-    public partial class Initialcreatescada : Migration
+    public partial class initialcreatescada : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.CreateTable(
-                name: "BountSignalToTag",
-                columns: table => new
-                {
-                    Id = table.Column<Guid>(type: "uuid", nullable: false),
-                    TagId = table.Column<Guid>(type: "uuid", nullable: false),
-                    SignalId = table.Column<Guid>(type: "uuid", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_BountSignalToTag", x => x.Id);
-                });
-
             migrationBuilder.CreateTable(
                 name: "Tags",
                 columns: table => new
@@ -35,13 +22,31 @@ namespace WebApplication1FKFromAnotherDB.Migrations
                 {
                     table.PrimaryKey("PK_Tags", x => x.Id);
                 });
+
+            migrationBuilder.CreateTable(
+                name: "BondSignalToTag",
+                columns: table => new
+                {
+                    TagId = table.Column<Guid>(type: "uuid", nullable: false),
+                    SignalId = table.Column<Guid>(type: "uuid", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_BondSignalToTag", x => x.TagId);
+                    table.ForeignKey(
+                        name: "FK_BondSignalToTag_Tags_TagId",
+                        column: x => x.TagId,
+                        principalTable: "Tags",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
         }
 
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "BountSignalToTag");
+                name: "BondSignalToTag");
 
             migrationBuilder.DropTable(
                 name: "Tags");

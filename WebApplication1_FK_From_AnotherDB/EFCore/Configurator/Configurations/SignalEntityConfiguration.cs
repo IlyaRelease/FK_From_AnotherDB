@@ -1,15 +1,15 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using WebApplication1_FK_From_AnotherDB.EFCore.SCADA.Models;
+using WebApplication1_FK_From_AnotherDB.EFCore.Configurator.Models;
 
-namespace WebApplication1_FK_From_AnotherDB.EFCore.SCADA.Configuration
+namespace WebApplication1_FK_From_AnotherDB.EFCore.Configurator.Configurations
 {
-    public class TagEntityConfiguration : IEntityTypeConfiguration<TagEntity>
+    public class SignalEntityConfiguration : IEntityTypeConfiguration<SignalEntity>
     {
-        public void Configure(EntityTypeBuilder<TagEntity> builder)
+        public void Configure(EntityTypeBuilder<SignalEntity> builder)
         {
             builder
-                .ToTable("Tags");
+                .ToTable("Signals");
             builder
                 .HasKey(x => x.Id);
             builder

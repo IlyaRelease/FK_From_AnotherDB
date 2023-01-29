@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using WebApplication1_FK_From_AnotherDB.EFCore.Configurator;
 using WebApplication1_FK_From_AnotherDB.EFCore.SCADA;
+using WebApplication1_FK_From_AnotherDB.Exstentions;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -23,6 +24,7 @@ if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
+    app.SeedDB();
 }
 
 app.UseHttpsRedirection();

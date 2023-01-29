@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using WebApplication1_FK_From_AnotherDB.EFCore.SCADA.Models;
 
-namespace WebApplication1_FK_From_AnotherDB.EFCore.SCADA.Configuration
+namespace WebApplication1_FK_From_AnotherDB.EFCore.SCADA.Configurations
 {
     public class BoundSignalToTagEntityConfiguration : IEntityTypeConfiguration<BondSignalToTagEntity>
     {
@@ -11,17 +11,12 @@ namespace WebApplication1_FK_From_AnotherDB.EFCore.SCADA.Configuration
             builder
                 .ToTable("BondSignalToTag");
             builder
-                .HasKey(x => x.Id); 
-            builder
-                .HasIndex(x => x.TagId);
-            builder
-                .Property(x => x.Id)
+                .Property(x => x.TagId)
                 .IsRequired();
+            builder
+                .HasIndex(x => x.SignalId);
             builder
                 .Property(x => x.SignalId)
-                .IsRequired();
-            builder
-                .Property(x => x.TagId)
                 .IsRequired();
         }
     }
