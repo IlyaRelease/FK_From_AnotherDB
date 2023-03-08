@@ -4,24 +4,23 @@ using WebApplication1_FK_From_AnotherDB.EFCore.Configurator.Models;
 
 namespace WebApplication1_FK_From_AnotherDB.EFCore.Configurator.Configurations
 {
-    public class SignalEntityConfiguration : IEntityTypeConfiguration<SignalEntity>
+    public class DeviceEntityConfiguration : IEntityTypeConfiguration<DeviceEntity>
     {
-        public void Configure(EntityTypeBuilder<SignalEntity> builder)
+        public void Configure(EntityTypeBuilder<DeviceEntity> builder)
         {
             builder
-                .ToTable("Signals");
+                .ToTable("Devices");
             builder
-                .HasKey(x => x.Id);
+                .HasKey(d => d.Id);
             builder
-                .Property(x => x.Id)
+                .Property(d => d.Name)
                 .IsRequired();
             builder
-                .Property(x => x.Property)
+                .Property(d => d.Protocol)
                 .IsRequired();
+
             builder
-                .HasOne(x => x.Device)
-                .WithMany(s => s.Signals)
-                .HasForeignKey(s => s.DeviceId);
+                .HasIndex(d => d.Name);
         }
     }
 }
