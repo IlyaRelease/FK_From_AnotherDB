@@ -40,7 +40,7 @@ namespace WebApplication1FKFromAnotherDB.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("DeviceEntity");
+                    b.ToTable("Devices");
                 });
 
             modelBuilder.Entity("WebApplication1_FK_From_AnotherDB.EFCore.Configurator.Models.SignalEntity", b =>

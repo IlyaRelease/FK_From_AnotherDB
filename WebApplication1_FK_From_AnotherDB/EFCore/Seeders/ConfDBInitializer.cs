@@ -13,8 +13,11 @@ namespace WebApplication1_FK_From_AnotherDB.EFCore.Seeders
             
             var rand = new Random();
 
+            int deviceId = rand.Next();
+            dbContext.Devices.Add(new DeviceEntity() { Id = deviceId, Name = "SimpleController", Protocol = "Native" });
+
             foreach (var link in links)
-                dbContext.Signals.Add(new SignalEntity() { Id = link, Property = "some options" });
+                dbContext.Signals.Add(new SignalEntity() { Id = link, DeviceId = deviceId, Property = "some options" });
 
             dbContext.SaveChanges();
         }

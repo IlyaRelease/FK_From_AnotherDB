@@ -12,8 +12,8 @@ using WebApplication1_FK_From_AnotherDB.EFCore.Configurator;
 namespace WebApplication1FKFromAnotherDB.Migrations
 {
     [DbContext(typeof(ConfDBContext))]
-    [Migration("20230308213842_initial")]
-    partial class initial
+    [Migration("20230310201407_initialConf")]
+    partial class initialConf
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -43,7 +43,7 @@ namespace WebApplication1FKFromAnotherDB.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("DeviceEntity");
+                    b.ToTable("Devices");
                 });
 
             modelBuilder.Entity("WebApplication1_FK_From_AnotherDB.EFCore.Configurator.Models.SignalEntity", b =>

@@ -11,5 +11,6 @@ namespace WebApplication1_FK_From_AnotherDB.EFCore.Configurator
         }
 
         public DbSet<SignalEntity> Signals { get; set; }
+        public DbSet<DeviceEntity> Devices { get; set; }
     }
 }
