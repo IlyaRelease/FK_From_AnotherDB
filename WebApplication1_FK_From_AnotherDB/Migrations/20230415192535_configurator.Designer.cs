@@ -12,8 +12,8 @@ using WebApplication1_FK_From_AnotherDB.EFCore.Configurator;
 namespace WebApplication1FKFromAnotherDB.Migrations
 {
     [DbContext(typeof(ConfDBContext))]
-    [Migration("20230310201407_initialConf")]
-    partial class initialConf
+    [Migration("20230415192535_configurator")]
+    partial class configurator
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

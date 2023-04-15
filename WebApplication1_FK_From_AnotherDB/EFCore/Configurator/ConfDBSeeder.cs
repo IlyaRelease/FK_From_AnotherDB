@@ -1,16 +1,15 @@
-﻿using WebApplication1_FK_From_AnotherDB.EFCore.Configurator;
-using WebApplication1_FK_From_AnotherDB.EFCore.Configurator.Models;
+﻿using WebApplication1_FK_From_AnotherDB.EFCore.Configurator.Models;
 
-namespace WebApplication1_FK_From_AnotherDB.EFCore.Seeders
+namespace WebApplication1_FK_From_AnotherDB.EFCore.Configurator
 {
-    public class ConfDBInitializer
+    public class ConfDBSeeder
     {
-        internal static void Initialize(ConfDBContext dbContext, IEnumerable<Guid> links)
+        internal static void Seed(ConfDBContext dbContext, IEnumerable<Guid> links)
         {
             ArgumentNullException.ThrowIfNull(dbContext, nameof(dbContext));
             dbContext.Database.EnsureCreated();
             if (dbContext.Signals.Any()) return;
-            
+
             var rand = new Random();
 
             int deviceId = rand.Next();

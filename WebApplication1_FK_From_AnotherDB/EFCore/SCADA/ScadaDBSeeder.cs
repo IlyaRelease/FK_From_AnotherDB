@@ -1,11 +1,10 @@
-﻿using WebApplication1_FK_From_AnotherDB.EFCore.SCADA;
-using WebApplication1_FK_From_AnotherDB.EFCore.SCADA.Models;
+﻿using WebApplication1_FK_From_AnotherDB.EFCore.SCADA.Models;
 
-namespace WebApplication1_FK_From_AnotherDB.EFCore.Seeders
+namespace WebApplication1_FK_From_AnotherDB.EFCore.SCADA
 {
-    public class ScadaDBInitializer
+    public class ScadaDBSeeder
     {
-        internal static void Initialize(ScadaDBContext dbContext, IEnumerable<Guid> links)
+        internal static void Seed(ScadaDBContext dbContext, IEnumerable<Guid> links)
         {
             ArgumentNullException.ThrowIfNull(dbContext, nameof(dbContext));
             dbContext.Database.EnsureCreated();

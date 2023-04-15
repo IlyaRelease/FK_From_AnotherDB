@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace WebApplication1FKFromAnotherDB.Migrations
 {
     /// <inheritdoc />
-    public partial class initialScada : Migration
+    public partial class scada : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)

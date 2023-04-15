@@ -1,10 +1,9 @@
 ﻿using WebApplication1_FK_From_AnotherDB.EFCore.Configurator;
 using WebApplication1_FK_From_AnotherDB.EFCore.SCADA;
-using WebApplication1_FK_From_AnotherDB.EFCore.Seeders;
 
 namespace WebApplication1_FK_From_AnotherDB.Exstentions
 {
-    internal static class DBInitializerExtension
+    internal static class IApplicationBuilderExtension
     {
         public static IApplicationBuilder SeedDB(this IApplicationBuilder app)
         {
@@ -17,10 +16,10 @@ namespace WebApplication1_FK_From_AnotherDB.Exstentions
             for (int i = 0; i < 10; i++) signalsGuids.Add(Guid.NewGuid());
 
             var confContext = services.GetRequiredService<ConfDBContext>();
-            ConfDBInitializer.Initialize(confContext, signalsGuids);
+            ConfDBSeeder.Seed(confContext, signalsGuids);
 
             var scadaContext = services.GetRequiredService<ScadaDBContext>();
-            ScadaDBInitializer.Initialize(scadaContext, signalsGuids);
+            ScadaDBSeeder.Seed(scadaContext, signalsGuids);
 
             return app;
         }

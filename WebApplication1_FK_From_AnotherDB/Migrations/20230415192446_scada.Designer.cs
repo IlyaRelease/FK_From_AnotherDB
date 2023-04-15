@@ -12,8 +12,8 @@ using WebApplication1_FK_From_AnotherDB.EFCore.SCADA;
 namespace WebApplication1FKFromAnotherDB.Migrations
 {
     [DbContext(typeof(ScadaDBContext))]
-    [Migration("20230308213901_initialScada")]
-    partial class initialScada
+    [Migration("20230415192446_scada")]
+    partial class scada
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
