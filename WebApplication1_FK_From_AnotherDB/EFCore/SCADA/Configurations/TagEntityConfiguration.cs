@@ -1,8 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using WebApplication1_FK_From_AnotherDB.EFCore.SCADA.Models;
+using FKFromAnotherDB.EFCore.SCADA.Models;
 
-namespace WebApplication1_FK_From_AnotherDB.EFCore.SCADA.Configurations
+namespace FKFromAnotherDB.EFCore.SCADA.Configurations
 {
     public class TagEntityConfiguration : IEntityTypeConfiguration<TagEntity>
     {

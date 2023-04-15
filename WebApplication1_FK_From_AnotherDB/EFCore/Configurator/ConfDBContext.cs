@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using WebApplication1_FK_From_AnotherDB.EFCore.Configurator.Models;
+using FKFromAnotherDB.EFCore.Configurator.Models;
 
-namespace WebApplication1_FK_From_AnotherDB.EFCore.Configurator
+namespace FKFromAnotherDB.EFCore.Configurator
 {
     public class ConfDBContext : DbContext
     {

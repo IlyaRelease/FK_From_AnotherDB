@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 
-namespace WebApplication1_FK_From_AnotherDB.Controllers
+namespace FKFromAnotherDB.Controllers
 {
     [ApiController]
     [Route("[controller]")]

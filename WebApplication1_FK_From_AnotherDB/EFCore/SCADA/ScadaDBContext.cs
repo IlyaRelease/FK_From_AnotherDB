@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using WebApplication1_FK_From_AnotherDB.EFCore.SCADA.Models;
+using FKFromAnotherDB.EFCore.SCADA.Models;
 
-namespace WebApplication1_FK_From_AnotherDB.EFCore.SCADA
+namespace FKFromAnotherDB.EFCore.SCADA
 {
     public class ScadaDBContext : DbContext
     {

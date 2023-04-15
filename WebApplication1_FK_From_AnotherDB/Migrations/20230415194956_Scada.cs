@@ -3,10 +3,10 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace WebApplication1FKFromAnotherDB.Migrations
+namespace FKFromAnotherDB.Migrations
 {
     /// <inheritdoc />
-    public partial class scada : Migration
+    public partial class Scada : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)

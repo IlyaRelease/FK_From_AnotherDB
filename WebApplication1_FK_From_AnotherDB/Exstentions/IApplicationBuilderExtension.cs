@@ -1,7 +1,7 @@
-﻿using WebApplication1_FK_From_AnotherDB.EFCore.Configurator;
-using WebApplication1_FK_From_AnotherDB.EFCore.SCADA;
+﻿using FKFromAnotherDB.EFCore.Configurator;
+using FKFromAnotherDB.EFCore.SCADA;
 
-namespace WebApplication1_FK_From_AnotherDB.Exstentions
+namespace FKFromAnotherDB.Exstentions
 {
     internal static class IApplicationBuilderExtension
     {
@@ -12,14 +12,17 @@ namespace WebApplication1_FK_From_AnotherDB.Exstentions
             using var scope = app.ApplicationServices.CreateScope();
             var services = scope.ServiceProvider;
 
-            var signalsGuids = new List<Guid>();
-            for (int i = 0; i < 10; i++) signalsGuids.Add(Guid.NewGuid());
+            var scadaDB = services.GetRequiredService<ScadaDBContext>();
+            var confDB = services.GetRequiredService<ConfDBContext>();
 
-            var confContext = services.GetRequiredService<ConfDBContext>();
-            ConfDBSeeder.Seed(confContext, signalsGuids);
+            if (scadaDB.Tags.Any() || scadaDB.BondSignalToTag.Any()) return app;
+            if (confDB.Signals.Any()) return app;
 
-            var scadaContext = services.GetRequiredService<ScadaDBContext>();
-            ScadaDBSeeder.Seed(scadaContext, signalsGuids);
+            var sharedInitialData = new List<Guid>();
+            for (int i = 0; i < 10; i++) sharedInitialData.Add(Guid.NewGuid());
+
+            ConfDBSeeder.Seed(confDB, sharedInitialData);
+            ScadaDBSeeder.Seed(scadaDB, sharedInitialData);
 
             return app;
         }

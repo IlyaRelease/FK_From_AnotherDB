@@ -1,6 +1,6 @@
-﻿using WebApplication1_FK_From_AnotherDB.EFCore.SCADA.Models;
+﻿using FKFromAnotherDB.EFCore.SCADA.Models;
 
-namespace WebApplication1_FK_From_AnotherDB.EFCore.SCADA
+namespace FKFromAnotherDB.EFCore.SCADA
 {
     public class ScadaDBSeeder
     {
@@ -8,7 +8,6 @@ namespace WebApplication1_FK_From_AnotherDB.EFCore.SCADA
         {
             ArgumentNullException.ThrowIfNull(dbContext, nameof(dbContext));
             dbContext.Database.EnsureCreated();
-            if (dbContext.Tags.Any() || dbContext.BondSignalToTag.Any()) return;
 
             var rand = new Random();
             foreach (var link in links)

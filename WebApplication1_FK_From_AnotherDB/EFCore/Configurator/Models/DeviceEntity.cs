@@ -1,4 +1,4 @@
-﻿namespace WebApplication1_FK_From_AnotherDB.EFCore.Configurator.Models
+﻿namespace FKFromAnotherDB.EFCore.Configurator.Models
 {
     public class DeviceEntity
     {

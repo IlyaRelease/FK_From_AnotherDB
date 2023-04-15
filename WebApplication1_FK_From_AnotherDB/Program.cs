@@ -1,7 +1,7 @@
 using Microsoft.EntityFrameworkCore;
-using WebApplication1_FK_From_AnotherDB.EFCore.Configurator;
-using WebApplication1_FK_From_AnotherDB.EFCore.SCADA;
-using WebApplication1_FK_From_AnotherDB.Exstentions;
+using FKFromAnotherDB.EFCore.Configurator;
+using FKFromAnotherDB.EFCore.SCADA;
+using FKFromAnotherDB.Exstentions;
 
 var builder = WebApplication.CreateBuilder(args);
 

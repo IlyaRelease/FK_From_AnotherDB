@@ -1,4 +1,4 @@
-﻿namespace WebApplication1_FK_From_AnotherDB.EFCore.SCADA.Models
+﻿namespace FKFromAnotherDB.EFCore.SCADA.Models
 {
     public class BondSignalToTagEntity
     {

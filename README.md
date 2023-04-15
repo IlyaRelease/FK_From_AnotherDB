@@ -1,6 +1,8 @@
 # FK_From_AnotherDB
 https://app.diagrams.net/#G1YzAC67f_lGXXoK4R3nu_FjylV_FkZjtJ
 
+Setup Instructions:
+
 This solution use PostgreeSQL
 
 To add migrations use this commands:

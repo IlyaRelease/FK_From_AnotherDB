@@ -1,4 +1,4 @@
-namespace WebApplication1_FK_From_AnotherDB
+namespace FKFromAnotherDB
 {
     public class WeatherForecast
     {

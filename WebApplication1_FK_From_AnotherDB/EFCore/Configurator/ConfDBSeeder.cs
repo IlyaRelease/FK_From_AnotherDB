@@ -1,6 +1,6 @@
-﻿using WebApplication1_FK_From_AnotherDB.EFCore.Configurator.Models;
+﻿using FKFromAnotherDB.EFCore.Configurator.Models;
 
-namespace WebApplication1_FK_From_AnotherDB.EFCore.Configurator
+namespace FKFromAnotherDB.EFCore.Configurator
 {
     public class ConfDBSeeder
     {
@@ -8,7 +8,6 @@ namespace WebApplication1_FK_From_AnotherDB.EFCore.Configurator
         {
             ArgumentNullException.ThrowIfNull(dbContext, nameof(dbContext));
             dbContext.Database.EnsureCreated();
-            if (dbContext.Signals.Any()) return;
 
             var rand = new Random();
 
