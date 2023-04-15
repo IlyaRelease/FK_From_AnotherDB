@@ -15,8 +15,8 @@ namespace FKFromAnotherDB.Exstentions
             var scadaDB = services.GetRequiredService<ScadaDBContext>();
             var confDB = services.GetRequiredService<ConfDBContext>();
 
-            if (scadaDB.Tags.Any() || scadaDB.BondSignalToTag.Any()) return app;
-            if (confDB.Signals.Any()) return app;
+            if (scadaDB.Tags.Any() || scadaDB.BondSignalToTag.Any()
+                || confDB.Signals.Any()) return app;
 
             var sharedInitialData = new List<Guid>();
             for (int i = 0; i < 10; i++) sharedInitialData.Add(Guid.NewGuid());
